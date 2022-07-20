@@ -10,7 +10,7 @@ fn get_url() -> String{
 }
 async fn stress(url:&str) -> Result<(), Box<dyn std::error::Error>>{
         
-    for x in 1..100{
+    for x in 1..1000{
         let resp = reqwest::get(url)
             .await?
             .text()
@@ -33,5 +33,3 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("total : {:?}",now-started);
     Ok(())
 }
-
-// "http://ldj.ddns.net:8000/hello/sibal/19"
